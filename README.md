@@ -52,7 +52,7 @@ aws-extender-cli -s S3 -b flaws.cloud -k keys.csv
 ```
 
 ```ShellSession
-aws-extender-cli -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o output.txt
+aws-extender-cli -s s3 -b mybucketname -w /usr/share/wordlists/darkc0de.lst -o output.txt
 ```
 
 #
@@ -68,7 +68,7 @@ aws_extender_cli.py -s S3 -b flaws.cloud -k keys.csv
 ```
 
 ```ShellSession
-aws_extender_cli.py -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o output.txt
+aws_extender_cli.py -s s3 -b mybucketname -w /usr/share/wordlists/darkc0de.lst -o output.txt
 ```
 
 #

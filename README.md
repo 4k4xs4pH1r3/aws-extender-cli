@@ -3,12 +3,15 @@
 AWS Extender CLI is a command-line script to test S3 buckets as well as Google Storage buckets and Azure Storage containers for common misconfiguration issues using the boto/boto3 SDK library.
 
 #
+
 ## Install
 
 ```ShellSession
 makepkg -si && aws-extender-cli -v
 ```
+
 #
+
 ## CLI Arguments
 
 Below is a description of supported arguments:
@@ -25,6 +28,7 @@ Below is a description of supported arguments:
 | -v, --version  |              Show the version of the script              |  False   |
 
 #
+
 #### Notes:
 
 - Mutually exclusive arguments are denoted by an asterisk.
@@ -36,6 +40,7 @@ aws_secret_access_key=XXXXXXXXXXXXXXXXXXXXXX
 ```
 
 #
+
 ## Example Usage (Installing it):
 
 ```ShellSession
@@ -51,6 +56,7 @@ aws-extender-cli -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o ou
 ```
 
 #
+
 ## Example Usage (With Installing it):
 
 ```ShellSession
@@ -66,6 +72,7 @@ aws_extender_cli.py -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o
 ```
 
 #
+
 ## Usage
 
 The script can be used to test individual buckets, or to test a list of buckets from a file. The `-s` argument is required and specifies the service to test. The `-b` argument specifies the bucket to test, and the `-f` argument specifies the file containing a list of buckets.
@@ -82,11 +89,17 @@ The `-w` argument specifies a wordlist to use for enumeration attacks. The wordl
 The `-o` argument specifies an output file to write the results to. If no output file is specified, the results will be printed to the console.
 
 #
+
 ## Features
+
 #
+
 - **AWS S3 bucket testing:**
+
 #
+
 The script can test AWS S3 buckets for common misconfiguration issues, such as:
+
 - Public read access
 - Public write access
 - Missing bucket policies
@@ -100,9 +113,13 @@ The script can test AWS S3 buckets for common misconfiguration issues, such as:
 - Missing bucket tagging
 
 #
+
 - **Google Storage bucket testing:**
+
 #
+
 The script can test Google Storage buckets for common misconfiguration issues, such as:
+
 - Public read access
 - Public write access
 - Missing bucket policies
@@ -116,9 +133,13 @@ The script can test Google Storage buckets for common misconfiguration issues, s
 - Missing bucket tagging
 
 #
+
 - **Azure Storage container testing:**
+
 #
+
 The script can test Azure Storage containers for common misconfiguration issues, such as:
+
 - Public read access
 - Public write access
 - Missing container policies
@@ -132,17 +153,23 @@ The script can test Azure Storage containers for common misconfiguration issues,
 - Missing container tagging
 
 #
+
 - **Wordlist enumeration:**
-The script can be used to enumerate objects in buckets using a wordlist.
+  The script can be used to enumerate objects in buckets using a wordlist.
 
 #
+
 - **Output to file:**
-The script can output the results to a file.
+  The script can output the results to a file.
 
 #
+
 ## Contributing
+
 Contributions are welcome! If you have any suggestions or bug reports, please open an issue on the GitHub repository.
 
 #
+
 ## Disclaimer
+
 This script is provided for educational purposes only. It should not be used to harm or exploit others. The author is not responsible for any misuse of this script.

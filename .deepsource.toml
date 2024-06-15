@@ -25,7 +25,7 @@ name = "ansible"
 name = "go"
 
   [analyzers.meta]
-  import_root = "github.com/4k4xs4pH1r3/artemisa"
+  import_root = "github.com/4k4xs4pH1r3/aws-extender-cli"
   dependencies_vendored = true
 
 [[analyzers]]

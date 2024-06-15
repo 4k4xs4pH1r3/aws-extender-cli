@@ -80,7 +80,8 @@ The `-o` argument specifies an output file to write the results to. If no output
 
 ## Features
 
-* **S3 bucket testing:** The script can test S3 buckets for common misconfiguration issues, such as:
+* **S3 bucket testing:** 
+The script can test S3 buckets for common misconfiguration issues, such as:
 * Public read access
 * Public write access
 * Missing bucket policies
@@ -93,7 +94,8 @@ The `-o` argument specifies an output file to write the results to. If no output
 * Missing bucket notification configuration
 * Missing bucket tagging
 
-* **Google Storage bucket testing:** The script can test Google Storage buckets for common misconfiguration issues, such as:
+* **Google Storage bucket testing:**
+The script can test Google Storage buckets for common misconfiguration issues, such as:
 * Public read access
 * Public write access
 * Missing bucket policies
@@ -106,7 +108,8 @@ The `-o` argument specifies an output file to write the results to. If no output
 * Missing bucket notification configuration
 * Missing bucket tagging
 
-* **Azure Storage container testing:** The script can test Azure Storage containers for common misconfiguration issues, such as:
+* **Azure Storage container testing:**
+The script can test Azure Storage containers for common misconfiguration issues, such as:
 * Public read access
 * Public write access
 * Missing container policies
@@ -119,9 +122,11 @@ The `-o` argument specifies an output file to write the results to. If no output
 * Missing container notification configuration
 * Missing container tagging
 
-* **Wordlist enumeration:** The script can be used to enumerate objects in buckets using a wordlist.
+* **Wordlist enumeration:**
+The script can be used to enumerate objects in buckets using a wordlist.
 
-* **Output to file:** The script can output the results to a file.
+* **Output to file:**
+The script can output the results to a file.
 
 ## Contributing
 

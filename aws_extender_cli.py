@@ -334,7 +334,7 @@ def test_s3_bucket(bucket_name: str, clients: list, wordlist_path: str = "") -> 
     if "." in bucket_name:
         try:
             client.put_bucket_acl(
-                GrantFullControl='uri="http://acs.amazonaws.com/groups/global/AllUsers"',
+                GrantFullControl='uri="https://acs.amazonaws.com/groups/global/AllUsers"',
                 Bucket=bucket_name,
             )
             issues.append("s3:PutBucketAcl")

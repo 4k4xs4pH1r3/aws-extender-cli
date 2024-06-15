@@ -24,7 +24,7 @@ Below is a description of supported arguments:
 | -w, --wordlist |                   A wordlist filepath                    |  False   |
 | -o, --output   |                    An output filename                    |  False   |
 | -k, --keys     |            The path of your credentials file             |  False   |
-| -s, --service  | the name of the storage service ("S3", "GS", or "Azure") |   True   |
+| -s, --service  |   Name of storage service ("AWS S3", "GCP", or "Azure")  |   True   |
 | -v, --version  |              Show the version of the script              |  False   |
 
 #
@@ -32,7 +32,7 @@ Below is a description of supported arguments:
 #### Notes:
 
 - Mutually exclusive arguments are denoted by an asterisk.
-- The `-k/--keys` argument expects the filepath of your [AWS](https://console.aws.amazon.com/iam/home?#/security_credential)/[GS](https://cloud.google.com/storage/docs/migrating#keys) keys. The keys are expected to be in the following format:
+- The `-k/--keys` argument expects the filepath of your [AWS](https://console.aws.amazon.com/iam/home?#/security_credential)/[GCP](https://cloud.google.com/storage/docs/migrating#keys) keys. The keys are expected to be in the following format:
 
 ```
 aws_access_key_id=XXXXXXXXXXXXXXXXXXXX
@@ -77,7 +77,7 @@ aws_extender_cli.py -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o
 
 The script can be used to test individual buckets, or to test a list of buckets from a file. The `-s` argument is required and specifies the service to test. The `-b` argument specifies the bucket to test, and the `-f` argument specifies the file containing a list of buckets.
 
-The `-k` argument specifies the path to a file containing your AWS/GS credentials. The credentials are expected to be in the following format:
+The `-k` argument specifies the path to a file containing your AWS/GCP credentials. The credentials are expected to be in the following format:
 
 ```
 aws_access_key_id=XXXXXXXXXXXXXXXXXXXX

@@ -36,29 +36,29 @@ aws_secret_access_key=XXXXXXXXXXXXXXXXXXXXXX
 ## Example Usage (Installing it):
 
 
-```bash
+```ShellSession
 aws-extender-cli -s s3 -b mybucketname
 ```
 
-```bash
+```ShellSession
 aws-extender-cli -s S3 -b flaws.cloud -k keys.csv
 ```
 
-```bash
+```ShellSession
 aws-extender-cli -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o output.txt
 ```
 
 ## Example Usage (With Installing it):
 
-```bash
+```ShellSession
 aws_extender_cli.py -s s3 -b mybucketname
 ```
 
-```bash
+```ShellSession
 aws_extender_cli.py -s S3 -b flaws.cloud -k keys.csv
 ```
 
-```bash
+```ShellSession
 aws_extender_cli.py -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o output.txt
 ```
 
@@ -78,7 +78,9 @@ The `-w` argument specifies a wordlist to use for enumeration attacks. The wordl
 
 The `-o` argument specifies an output file to write the results to. If no output file is specified, the results will be printed to the console.
 
+
 ## Features
+
 
 * **S3 bucket testing:** 
 The script can test S3 buckets for common misconfiguration issues, such as:
@@ -94,6 +96,7 @@ The script can test S3 buckets for common misconfiguration issues, such as:
 * Missing bucket notification configuration
 * Missing bucket tagging
 
+
 * **Google Storage bucket testing:**
 The script can test Google Storage buckets for common misconfiguration issues, such as:
 * Public read access
@@ -107,6 +110,7 @@ The script can test Google Storage buckets for common misconfiguration issues, s
 * Missing bucket website configuration
 * Missing bucket notification configuration
 * Missing bucket tagging
+
 
 * **Azure Storage container testing:**
 The script can test Azure Storage containers for common misconfiguration issues, such as:
@@ -122,15 +126,19 @@ The script can test Azure Storage containers for common misconfiguration issues,
 * Missing container notification configuration
 * Missing container tagging
 
+
 * **Wordlist enumeration:**
 The script can be used to enumerate objects in buckets using a wordlist.
+
 
 * **Output to file:**
 The script can output the results to a file.
 
+
 ## Contributing
 
 Contributions are welcome! If you have any suggestions or bug reports, please open an issue on the GitHub repository.
+
 
 ## Disclaimer
 

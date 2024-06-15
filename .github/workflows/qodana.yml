@@ -1,0 +1,2 @@
+- name: Qodana Scan
+  uses: JetBrains/qodana-action@32840fdb87f8dd110e0a6b09323c7142b667b25d # v2024.1.5

@@ -1,6 +1,6 @@
 pkgname=aws-extender-cli
-pkgver=1.1.3
-pkgrel=3
+pkgver=1.1.4
+pkgrel=4
 pkgdesc="AWS Extender CLI is a command-line script to test S3 buckets as well as Google Storage buckets and Azure Storage containers for common misconfiguration issues using the boto/boto3 SDK library."
 arch=('any')
 url="https://github.com/VirtueSecurity/aws-extender-cli/"

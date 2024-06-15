@@ -1,1 +1,0 @@
-/home/pr1v8/aws-extender-cli/aws_extender_cli.py

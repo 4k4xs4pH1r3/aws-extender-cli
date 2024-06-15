@@ -9,9 +9,13 @@ jobs:
       matrix:
         python-version: ["3.11", "3.12.4"]
     steps:
-    - uses: actions/checkout@v4
+    - name: Harden Runner
+      uses: step-security/harden-runner@v2.8.1 # v2.8.1
+      with:
+       egress-policy: audit        
+    - uses: actions/checkout@v4.1.6 # v4.1.6
     - name: Set up Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v5.1.0 # v5.1.0
       with:
         python-version: ${{ matrix.python-version }}
     - name: Install dependencies
@@ -21,3 +25,11 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
+    - name: Linting the code with pylint
+      run: |
+       pylint --errors-only $(git ls-files '*.py')
+       # Run pylint on the whole project
+       pylint --rcfile=.pylintrc $(git ls-files '*.py')
+       # Run pylint on the whole project
+       pylint --rcfile=.pylintrc --errors-only $(git ls-files '*.py')
+

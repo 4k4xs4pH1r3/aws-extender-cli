@@ -1,20 +1,23 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """AWS Extender."""
+
 from __future__ import absolute_import, print_function
+
 import argparse
 import re
 import urllib.request as urllib_req
 from urllib.error import HTTPError, URLError
 from xml.dom.minidom import parse
 from xml.parsers.expat import ExpatError
+
 import boto3
+from boto.exception import S3ResponseError
+from boto.https_connection import InvalidCertificateException
+from boto.s3.connection import S3Connection
 from botocore.exceptions import ClientError
 from botocore.handlers import disable_signing
 from botocore.parsers import ResponseParserError
-from boto.https_connection import InvalidCertificateException
-from boto.s3.connection import S3Connection
-from boto.exception import S3ResponseError
 
 __version__ = "1.1.4-4"
 
@@ -29,13 +32,9 @@ def load_buckets(bucket_type: str, filepath: str) -> list:
     with open(filepath, "r") as buckets:
         bucket_list = buckets.read()
         if bucket_type != "azure":
-            bucket_list = re.findall(
-                r"(?:(?:gs|s3)://)?([\w.-]+)/?", bucket_list, re.I
-            )
+            bucket_list = re.findall(r"(?:(?:gs|s3)://)?([\w.-]+)/?", bucket_list, re.I)
         else:
-            bucket_list = re.findall(
-                r"((?:\w+://)?[\w.-]+/?)", bucket_list, re.I
-            )
+            bucket_list = re.findall(r"((?:\w+://)?[\w.-]+/?)", bucket_list, re.I)
     return bucket_list
 
 
@@ -133,9 +132,7 @@ def enumerate_keys(bucket, bucket_type: str, wordlist_path: str) -> list:
     return keys
 
 
-def test_s3_bucket(
-    bucket_name: str, clients: list, wordlist_path: str = ""
-) -> str:
+def test_s3_bucket(bucket_name: str, clients: list, wordlist_path: str = "") -> str:
     """Test Amazon S3 buckets.
 
     :param bucket_name: The name of the bucket to test.
@@ -252,7 +249,9 @@ def test_s3_bucket(
     try:
         client.put_bucket_cors(
             Bucket=bucket_name,
-            CORSConfiguration={"CORSRules": [{"AllowedMethods": ["GET"], "AllowedOrigins": ["*"]}]},
+            CORSConfiguration={
+                "CORSRules": [{"AllowedMethods": ["GET"], "AllowedOrigins": ["*"]}]
+            },
         )
         issues.append("s3:PutBucketCORS")
     except ClientError:
@@ -263,7 +262,9 @@ def test_s3_bucket(
     try:
         client.put_bucket_lifecycle_configuration(
             Bucket=bucket_name,
-            LifecycleConfiguration={"Rules": [{"Status": "Disabled", "Prefix": "test"}]},
+            LifecycleConfiguration={
+                "Rules": [{"Status": "Disabled", "Prefix": "test"}]
+            },
         )
         issues.append("s3:PutLifecycleConfiguration")
     except ClientError:
@@ -309,7 +310,10 @@ def test_s3_bucket(
     try:
         client.put_bucket_website(
             Bucket=bucket_name,
-            WebsiteConfiguration={"ErrorDocument": {"Key": "test"}, "IndexDocument": {"Suffix": "test"}},
+            WebsiteConfiguration={
+                "ErrorDocument": {"Key": "test"},
+                "IndexDocument": {"Suffix": "test"},
+            },
         )
         issues.append("s3:PutBucketWebsite")
     except ClientError:
@@ -318,7 +322,9 @@ def test_s3_bucket(
         issues.append("s3:PutBucketWebsite")
 
     try:
-        client.put_object(ACL="public-read-write", Body=b"test", Bucket=bucket_name, Key="test.txt")
+        client.put_object(
+            ACL="public-read-write", Body=b"test", Bucket=bucket_name, Key="test.txt"
+        )
         issues.append("s3:PutObject\n\t* test.txt")
     except ClientError:
         pass
@@ -377,9 +383,7 @@ def test_s3_bucket(
     return issuedetail
 
 
-def test_gs_bucket(
-    bucket_name: str, clients: list, wordlist_path: str = ""
-) -> str:
+def test_gs_bucket(bucket_name: str, clients: list, wordlist_path: str = "") -> str:
     """Test Google Storage buckets.
 
     :param bucket_name: The name of the bucket to test.

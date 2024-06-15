@@ -1,6 +1,6 @@
 # AWS Extender CLI
 
-AWS Extender CLI is a command-line script to test S3 buckets as well as Google Storage buckets and Azure Storage containers for common misconfiguration issues using the boto/boto3 SDK library.
+AWS Extender CLI is a command-line script to test AWS S3 buckets as well as Google Storage buckets and Azure Storage containers for common misconfiguration issues using the boto/boto3 SDK library.
 
 #
 

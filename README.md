@@ -16,16 +16,16 @@ git clone https://github.com/4k4xs4pH1r3/aws-extender-cli.git && cd aws-extender
 
 Below is a description of supported arguments:
 
-| Argument       |                       Description                        | Required |
-| -------------- | :------------------------------------------------------: | :------: |
-| -h, --help     |               Show a help message and exit               |  False   |
-| -f, --filepath |             The path of a bucket names list              | False\*  |
-| -b, --bucket   |              The name of the bucket to test              | False\*  |
-| -w, --wordlist |                   A wordlist filepath                    |  False   |
-| -o, --output   |                    An output filename                    |  False   |
-| -k, --keys     |            The path of your credentials file             |  False   |
-| -s, --service  |   Name of storage service ("AWS S3", "GCP", or "Azure")  |   True   |
-| -v, --version  |              Show the version of the script              |  False   |
+| Argument       |                      Description                      | Required |
+| -------------- | :---------------------------------------------------: | :------: |
+| -h, --help     |             Show a help message and exit              |  False   |
+| -f, --filepath |            The path of a bucket names list            | False\*  |
+| -b, --bucket   |            The name of the bucket to test             | False\*  |
+| -w, --wordlist |                  A wordlist filepath                  |  False   |
+| -o, --output   |                  An output filename                   |  False   |
+| -k, --keys     |           The path of your credentials file           |  False   |
+| -s, --service  | Name of storage service ("AWS S3", "GCP", or "Azure") |   True   |
+| -v, --version  |            Show the version of the script             |  False   |
 
 #
 

@@ -7,7 +7,7 @@ AWS Extender CLI is a command-line script to test S3 buckets as well as Google S
 ## Install
 
 ```ShellSession
-makepkg -si && aws-extender-cli -v
+git clone https://github.com/4k4xs4pH1r3/aws-extender-cli.git && cd aws-extender-cli && makepkg -si && aws-extender-cli -v
 ```
 
 #
@@ -57,7 +57,7 @@ aws-extender-cli -s s3 -b mybucketnam -w /usr/share/wordlists/darkc0de.lst -o ou
 
 #
 
-## Example Usage (With Installing it):
+## Example Usage (No Installation is Required):
 
 ```ShellSession
 aws_extender_cli.py -s s3 -b mybucketname
